@@ -1,0 +1,9 @@
+import type { ReactNode } from "react";
+import { RootDocument } from "@/components/layout/RootDocument";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata("fr");
+
+export default function Layout({ children }: { children: ReactNode }) {
+  return <RootDocument locale="fr">{children}</RootDocument>;
+}
