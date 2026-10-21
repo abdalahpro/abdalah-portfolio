@@ -17,14 +17,15 @@ import { Trust } from "@/components/sections/Trust";
 import { VelocityMarquee } from "@/components/sections/VelocityMarquee";
 import { Work } from "@/components/sections/Work";
 import type { Locale } from "@/i18n/types";
-import { getNicheCounts, getProjects } from "@/lib/projects";
+import { getHighlights, getNicheCounts, getProjects } from "@/lib/projects";
 import { personJsonLd } from "@/lib/seo";
 
 export function HomePage({ locale }: { locale: Locale }) {
   const projects = getProjects(locale);
-  const featured = projects.slice(0, 10);
-  const ringImages = projects.slice(0, 16).map((p) => p.ringImage);
-  const serviceImages = projects.slice(10, 18).map((p) => p.image);
+  const highlights = getHighlights(projects);
+  const featured = highlights.slice(0, 10);
+  const ringImages = highlights.slice(0, 16).map((p) => p.ringImage);
+  const serviceImages = highlights.slice(10, 18).map((p) => p.image);
   const niches = getNicheCounts().map(([niche, count]) => ({
     niche,
     count,

@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Check, Copy, LoaderCircle, Mail } from "lucide-react";
+import { ArrowUpRight, Check, Copy, LoaderCircle, Mail, Phone } from "lucide-react";
 import { useDict } from "@/components/providers/I18nProvider";
 import { BrandIcon } from "@/components/ui/BrandIcon";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitReveal } from "@/components/ui/SplitReveal";
-import { site, whatsappUrl } from "@/data/site";
+import { phoneHref, site, whatsappUrl } from "@/data/site";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -19,7 +19,8 @@ export function Contact() {
 
   const channels = [
     { href: `mailto:${site.email}`, label: c.emailCta, sub: site.email, icon: <Mail className="size-5" /> },
-    whatsappUrl && { href: whatsappUrl, label: c.whatsappCta, sub: "WhatsApp", icon: <BrandIcon name="whatsapp" className="size-5" /> },
+    whatsappUrl && { href: whatsappUrl, label: c.whatsappCta, sub: site.whatsappLabel, icon: <BrandIcon name="whatsapp" className="size-5" /> },
+    phoneHref && { href: phoneHref, label: c.phoneCta, sub: site.phoneLabel, icon: <Phone className="size-5" /> },
     site.calendlyUrl && { href: site.calendlyUrl, label: c.calendlyCta, sub: "Calendly · 30 min", icon: <BrandIcon name="calendly" className="size-5" /> },
   ].filter(Boolean) as { href: string; label: string; sub: string; icon: React.ReactNode }[];
 
@@ -67,7 +68,7 @@ export function Contact() {
     <section id="contact" className="relative overflow-hidden py-28 sm:py-40">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[20vw] top-0 size-[70vw] rounded-full bg-[radial-gradient(circle,rgba(255,77,28,0.16),transparent_60%)] blur-3xl"
+        className="pointer-events-none absolute -right-[20vw] top-0 size-[70vw] rounded-full bg-[radial-gradient(circle,rgba(47,143,116,0.22),transparent_60%)] blur-3xl"
       />
       <div className="container-x relative">
         <p className="eyebrow mb-8">
@@ -91,7 +92,7 @@ export function Contact() {
                 <a
                   href={`mailto:${site.email}`}
                   data-cursor="Mail"
-                  className="group relative flex size-40 items-center justify-center overflow-hidden rounded-full bg-accent text-center text-[#120703] sm:size-48"
+                  className="group relative flex size-40 items-center justify-center overflow-hidden rounded-full bg-accent text-center text-on-accent sm:size-48"
                 >
                   <span className="absolute inset-0 scale-0 rounded-full bg-ink transition-transform duration-700 ease-[var(--ease-expo)] group-hover:scale-100" />
                   <span className="relative flex flex-col items-center gap-2 font-medium">

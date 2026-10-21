@@ -94,10 +94,10 @@ function Blob({ pointer, detail }: { pointer: React.RefObject<Pointer>; detail: 
       uTime: { value: 0 },
       uAmp: { value: 0.22 },
       uMouse: { value: new THREE.Vector2() },
-      uDeep: { value: new THREE.Color("#0b0a0f") },
-      uEmber: { value: new THREE.Color("#ff4d1c") },
-      uPeach: { value: new THREE.Color("#ffc4a3") },
-      uViolet: { value: new THREE.Color("#7b5cff") },
+      uDeep: { value: new THREE.Color("#06100c") },
+      uEmber: { value: new THREE.Color("#c9a96e") },
+      uPeach: { value: new THREE.Color("#f1e2bd") },
+      uViolet: { value: new THREE.Color("#2f8f74") },
     }),
     []
   );
@@ -175,7 +175,7 @@ function Dust({ pointer, count }: { pointer: React.RefObject<Pointer>; count: nu
       </bufferGeometry>
       <pointsMaterial
         size={0.018}
-        color="#ffc4a3"
+        color="#e7d7b1"
         transparent
         opacity={0.55}
         sizeAttenuation
@@ -218,7 +218,7 @@ export default function HeroScene() {
 
   if (!supported) {
     return (
-      <div className="absolute right-[-10vw] top-[10vh] size-[60vw] rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffc4a3_0%,#ff4d1c_25%,#2a0d06_60%,transparent_72%)] opacity-70 blur-2xl" />
+      <div className="absolute right-[-10vw] top-[10vh] size-[60vw] rounded-full bg-[radial-gradient(circle_at_35%_30%,#f1e2bd_0%,#c9a96e_22%,#1e6b57_48%,#06100c_65%,transparent_72%)] opacity-70 blur-2xl" />
     );
   }
 

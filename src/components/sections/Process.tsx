@@ -35,10 +35,10 @@ export function Process() {
           );
           gsap.fromTo(
             step.querySelector("[data-step-dot]"),
-            { scale: 0.4, backgroundColor: "#17171b" },
+            { scale: 0.4, backgroundColor: "#16241f" },
             {
               scale: 1,
-              backgroundColor: "#ff4d1c",
+              backgroundColor: "#c9a96e",
               scrollTrigger: { trigger: step, start: "top 60%", toggleActions: "play none none reverse" },
               duration: 0.5,
             }

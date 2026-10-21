@@ -5,13 +5,13 @@ import { PrintButton } from "@/components/ui/PrintButton";
 import { cvName, phoneHref, site, whatsappUrl } from "@/data/site";
 import { getDictionary } from "@/i18n";
 import { localePath, switchLocalePath, type Locale } from "@/i18n/types";
-import { getProjects } from "@/lib/projects";
+import { getHighlights, getProjects } from "@/lib/projects";
 import { splitBold } from "@/lib/utils";
 
 function Heading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-3 flex items-center gap-2 font-mono text-[9px] font-medium uppercase tracking-[0.22em] text-[#c2380f]">
-      <span className="h-px w-4 bg-[#c2380f]" />
+    <h2 className="mb-3 flex items-center gap-2 font-mono text-[9px] font-medium uppercase tracking-[0.22em] text-[#1f5c4a]">
+      <span className="h-px w-4 bg-[#1f5c4a]" />
       {children}
     </h2>
   );
@@ -20,13 +20,13 @@ function Heading({ children }: { children: React.ReactNode }) {
 export function CvPage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const cv = dict.cvPage;
-  const projects = getProjects(locale).slice(0, 8);
+  const projects = getHighlights(getProjects(locale)).slice(0, 8);
   const siteHost = new URL(site.url).host;
 
   const contacts = [
     { icon: <Mail className="size-3" />, value: site.email, href: `mailto:${site.email}` },
-    phoneHref && { icon: <Phone className="size-3" />, value: `+${site.phoneNumber}`, href: phoneHref },
-    whatsappUrl && { icon: <MessageCircle className="size-3" />, value: `WhatsApp +${site.whatsappNumber}`, href: whatsappUrl },
+    phoneHref && { icon: <Phone className="size-3" />, value: site.phoneLabel, href: phoneHref },
+    whatsappUrl && { icon: <MessageCircle className="size-3" />, value: `WhatsApp ${site.whatsappLabel}`, href: whatsappUrl },
     { icon: <Globe className="size-3" />, value: siteHost, href: site.url },
     { icon: <BrandIcon name="github" className="size-3" />, value: site.socials.github.replace("https://", ""), href: site.socials.github },
     site.socials.linkedin && {
@@ -60,12 +60,12 @@ export function CvPage({ locale }: { locale: Locale }) {
 
       <article className="print-sheet mx-auto w-full max-w-[210mm] overflow-hidden bg-paper text-paper-ink shadow-[0_40px_100px_-30px_rgba(0,0,0,0.8)] sm:rounded-lg">
         <header className="relative overflow-hidden bg-paper-ink px-8 py-9 text-paper sm:px-12">
-          <div aria-hidden className="absolute -right-16 -top-24 size-72 rounded-full bg-[radial-gradient(circle,#ff4d1c_0%,rgba(255,77,28,0)_65%)] opacity-60" />
+          <div aria-hidden className="absolute -right-16 -top-24 size-72 rounded-full bg-[radial-gradient(circle,#2f8f74_0%,rgba(47,143,116,0)_65%)] opacity-70" />
           <div className="relative flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#ffb38a]">Curriculum Vitae</p>
+              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#c9a96e]">Curriculum Vitae</p>
               <h1 className="mt-2 text-[40px] font-semibold leading-none tracking-[-0.04em]">{cvName}</h1>
-              <p className="serif-accent mt-2 text-[22px] text-[#ffb38a]">{site.roleLong[locale]}</p>
+              <p className="serif-accent mt-2 text-[22px] text-[#c9a96e]">{site.roleLong[locale]}</p>
             </div>
             <dl className="grid grid-cols-3 gap-5 text-right">
               {cv.stats.map((s) => (
@@ -73,7 +73,7 @@ export function CvPage({ locale }: { locale: Locale }) {
                   <dt className="sr-only">{s.label}</dt>
                   <dd>
                     <span className="block text-[22px] font-semibold leading-none tracking-[-0.03em]">{s.value}</span>
-                    <span className="mt-1 block text-[9px] uppercase tracking-[0.12em] text-[#c9c5be]">{s.label}</span>
+                    <span className="mt-1 block text-[9px] uppercase tracking-[0.12em] text-[#c5c0b2]">{s.label}</span>
                   </dd>
                 </div>
               ))}
@@ -85,7 +85,7 @@ export function CvPage({ locale }: { locale: Locale }) {
           <div className="space-y-7">
             <section>
               <Heading>{cv.profileEyebrow}</Heading>
-              <p className="text-[12.5px] leading-relaxed text-[#2a2930]">
+              <p className="text-[12.5px] leading-relaxed text-[#24302b]">
                 {splitBold(cv.profile).map((part, i) =>
                   part.bold ? (
                     <strong key={i} className="font-semibold text-paper-ink">
@@ -105,12 +105,12 @@ export function CvPage({ locale }: { locale: Locale }) {
                   <div key={x.title + x.company}>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                       <h3 className="text-[13.5px] font-semibold tracking-[-0.01em]">{x.title}</h3>
-                      {x.period && <span className="font-mono text-[9.5px] text-[#6b6872]">{x.period}</span>}
+                      {x.period && <span className="font-mono text-[9.5px] text-[#67716b]">{x.period}</span>}
                     </div>
-                    <p className="text-[11px] font-medium text-[#c2380f]">{x.company}</p>
-                    <ul className="mt-2 space-y-1 text-[#3a3940]">
+                    <p className="text-[11px] font-medium text-[#1f5c4a]">{x.company}</p>
+                    <ul className="mt-2 space-y-1 text-[#34403a]">
                       {x.bullets.map((b) => (
-                        <li key={b} className="relative pl-3.5 before:absolute before:left-0 before:top-[0.6em] before:size-1 before:rounded-full before:bg-[#c2380f]">
+                        <li key={b} className="relative pl-3.5 before:absolute before:left-0 before:top-[0.6em] before:size-1 before:rounded-full before:bg-[#1f5c4a]">
                           {b}
                         </li>
                       ))}
@@ -127,8 +127,8 @@ export function CvPage({ locale }: { locale: Locale }) {
                   {cv.education.map((e) => (
                     <div key={e.title}>
                       <h3 className="text-[13px] font-semibold">{e.title}</h3>
-                      <p className="text-[#3a3940]">{e.school}</p>
-                      <p className="font-mono text-[9.5px] text-[#6b6872]">{e.period}</p>
+                      <p className="text-[#34403a]">{e.school}</p>
+                      <p className="font-mono text-[9.5px] text-[#67716b]">{e.period}</p>
                     </div>
                   ))}
                 </div>
@@ -139,22 +139,22 @@ export function CvPage({ locale }: { locale: Locale }) {
               <Heading>{cv.selectedWorkEyebrow}</Heading>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                 {projects.map((p) => (
-                  <li key={p.id} className="flex items-baseline justify-between gap-2 border-b border-[#e6e1d8] pb-1.5">
+                  <li key={p.id} className="flex items-baseline justify-between gap-2 border-b border-[#e4ded2] pb-1.5">
                     <span className="font-medium">{p.name}</span>
-                    <span className="truncate font-mono text-[9px] text-[#6b6872]">{p.host}</span>
+                    <span className="truncate font-mono text-[9px] text-[#67716b]">{p.host}</span>
                   </li>
                 ))}
               </ul>
             </section>
           </div>
 
-          <aside className="space-y-7 sm:border-l sm:border-[#e6e1d8] sm:pl-7">
+          <aside className="space-y-7 sm:border-l sm:border-[#e4ded2] sm:pl-7">
             <section>
               <Heading>{cv.contactLabel}</Heading>
               <ul className="space-y-2 text-[10.5px]">
                 {contacts.map((c) => (
                   <li key={c.value} className="flex items-start gap-2 [overflow-wrap:anywhere]">
-                    <span className="mt-0.5 text-[#c2380f]">{c.icon}</span>
+                    <span className="mt-0.5 text-[#1f5c4a]">{c.icon}</span>
                     {c.href ? (
                       <a href={c.href} className="hover:underline">
                         {c.value}
@@ -165,7 +165,7 @@ export function CvPage({ locale }: { locale: Locale }) {
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-[10px] text-[#6b6872]">
+              <p className="mt-3 text-[10px] text-[#67716b]">
                 <span className="font-semibold text-paper-ink">{cv.mobilityLabel} :</span> {cv.mobility}
               </p>
             </section>
@@ -183,7 +183,7 @@ export function CvPage({ locale }: { locale: Locale }) {
                           className={
                             "highlight" in s && s.highlight
                               ? "rounded-full bg-paper-ink px-2 py-0.5 text-[9.5px] text-paper"
-                              : "rounded-full border border-[#d9d3c8] px-2 py-0.5 text-[9.5px]"
+                              : "rounded-full border border-[#d6cfc1] px-2 py-0.5 text-[9.5px]"
                           }
                         >
                           {s.name}
@@ -202,7 +202,7 @@ export function CvPage({ locale }: { locale: Locale }) {
                   {cv.languages.map((l) => (
                     <li key={l.name} className="flex justify-between gap-2">
                       <span className="font-medium">{l.name}</span>
-                      <span className="text-[#6b6872]">{l.level}</span>
+                      <span className="text-[#67716b]">{l.level}</span>
                     </li>
                   ))}
                 </ul>
@@ -211,7 +211,7 @@ export function CvPage({ locale }: { locale: Locale }) {
 
             <section>
               <Heading>{cv.strengthsEyebrow}</Heading>
-              <ul className="space-y-1 text-[#3a3940]">
+              <ul className="space-y-1 text-[#34403a]">
                 {cv.strengths.map((s) => (
                   <li key={s}>{s}</li>
                 ))}

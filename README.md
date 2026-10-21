@@ -12,10 +12,10 @@ Site bilingue (FR sur `/`, EN sur `/en`), entièrement statique, pensé pour Ver
 | Préchargeur (compteur 0→100, rideau) | Accueil, 1 fois par session | `src/components/layout/Preloader.tsx` |
 | Sphère liquide WebGL (bruit simplex, liseré iridescent, suit la souris et le scroll) | Hero | `src/components/three/HeroScene.tsx` |
 | Bandeau géant qui accélère et s'incline avec la vitesse de scroll | Sous le hero | `src/components/sections/VelocityMarquee.tsx` |
-| Manifeste révélé mot à mot + cartes empilées | « Ça te parle ? » | `src/components/sections/PainPoints.tsx` |
-| Galerie horizontale épinglée, captures qui défilent au survol | Réalisations | `src/components/sections/Work.tsx` |
-| Anneau 3D de boutiques piloté par le scroll (courbure + décalage RGB selon la vitesse) | « 200+ » | `src/components/three/RingScene.tsx` |
-| Aperçu d'image qui suit le curseur | Services, domaines | `src/components/ui/HoverPreview.tsx` |
+| Manifeste révélé mot à mot + cartes empilées | « Vous vous reconnaissez ? » | `src/components/sections/PainPoints.tsx` |
+| Galerie horizontale épinglée, captures qui défilent au survol | Projets | `src/components/sections/Work.tsx` |
+| Anneau 3D de boutiques piloté par le scroll (courbure + décalage RGB selon la vitesse) | « 165+ » | `src/components/three/RingScene.tsx` |
+| Aperçu d'image qui suit le curseur | Expertise, secteurs | `src/components/ui/HoverPreview.tsx` |
 | Vidéos verticales en défilement, lecture au survol, lecteur plein écran | En coulisses | `src/components/sections/Reels.tsx` |
 | Curseur personnalisé, boutons magnétiques, halo lumineux | Partout | `src/components/ui/` |
 

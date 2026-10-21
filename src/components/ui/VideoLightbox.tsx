@@ -55,7 +55,7 @@ export function VideoLightbox({ reel, onClose }: { reel: Reel | null; onClose: (
       <div
         data-lb-frame
         onClick={(e) => e.stopPropagation()}
-        className="relative aspect-[384/708] h-[min(86vh,820px)] max-w-[92vw] overflow-hidden rounded-[2.2rem] border-[6px] border-bg-3 bg-black shadow-[0_40px_120px_-20px_rgba(255,77,28,0.35)]"
+        className="relative aspect-[384/708] h-[min(86vh,820px)] max-w-[92vw] overflow-hidden rounded-[2.2rem] border-[6px] border-bg-3 bg-black shadow-[0_40px_120px_-20px_rgba(201,169,110,0.3)]"
       >
         <video
           key={reel.id}

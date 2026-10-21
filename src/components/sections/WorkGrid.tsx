@@ -51,7 +51,7 @@ export function WorkGrid({
       aria-pressed={filter === value}
       className={cn(
         "whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-colors duration-300",
-        filter === value ? "border-accent bg-accent text-[#120703]" : "border-line text-ink-2 hover:border-line-strong hover:text-ink"
+        filter === value ? "border-accent bg-accent text-on-accent" : "border-line text-ink-2 hover:border-line-strong hover:text-ink"
       )}
     >
       {label}

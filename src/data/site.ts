@@ -15,11 +15,13 @@ export const site = {
   /** Année affichée dans le pied de page (le site est pré-rendu, donc figé). */
   copyrightYear: 2026,
   email: "abdalahprox@gmail.com",
-  // TODO(abdalah): numéros au format international, sans espaces ni "+".
-  // Ex. "22912345678" → WhatsApp wa.me/22912345678 et appel tel:+22912345678.
-  whatsappNumber: "",
-  phoneNumber: "",
-  // TODO(abdalah): lien Calendly (ou Cal.com) pour l'appel découverte.
+  // Numéros au format international, sans espaces ni "+".
+  whatsappNumber: "22969272595",
+  phoneNumber: "2290169272595",
+  // Mêmes numéros, mis en forme pour l'affichage.
+  whatsappLabel: "+229 69 27 25 95",
+  phoneLabel: "+229 01 69 27 25 95",
+  // Pas de Calendly pour l'instant : le bouton "Réserver un appel" est masqué.
   calendlyUrl: "",
   location: {
     fr: "À distance, partout dans le monde",
@@ -27,7 +29,7 @@ export const site = {
   },
   socials: {
     github: "https://github.com/abdalahpro",
-    // TODO(abdalah): ajoute les URLs quand elles existent.
+    // Laissés vides volontairement pour l'instant (boutons masqués).
     linkedin: "",
     instagram: "",
     malt: "",
@@ -36,10 +38,9 @@ export const site = {
   },
   /** Formspree (formulaire de contact). Sans ID, le formulaire ouvre l'email. */
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
-  // TODO(abdalah): vérifie que ces chiffres correspondent à TON parcours.
   metrics: {
-    yearsExperience: 5,
-    storesLaunched: 200,
+    yearsExperience: 4,
+    storesLaunched: 165,
     avgDeliveryDays: 3,
   },
 };

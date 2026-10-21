@@ -78,7 +78,7 @@ export function Hero() {
       <div data-hero-reveal data-hero-scene className="absolute inset-0">
         <HeroScene />
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_100%,rgba(9,9,11,0.95)_0%,rgba(9,9,11,0.4)_45%,transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_100%,rgba(11,19,16,0.95)_0%,rgba(11,19,16,0.4)_45%,transparent_70%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent" />
 
       <div
@@ -120,11 +120,11 @@ export function Hero() {
                 <a
                   href="#contact"
                   data-cursor="Go"
-                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-accent py-4 pl-7 pr-5 text-[0.95rem] font-medium text-[#120703]"
+                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-accent py-4 pl-7 pr-5 text-[0.95rem] font-medium text-on-accent"
                 >
                   <span className="absolute inset-0 translate-y-full rounded-full bg-ink transition-transform duration-700 ease-[var(--ease-expo)] group-hover:translate-y-0" />
                   <span className="relative">{dict.hero.ctaPrimary}</span>
-                  <span className="relative flex size-7 items-center justify-center rounded-full bg-[#120703] text-accent transition-transform duration-500 group-hover:rotate-45">
+                  <span className="relative flex size-7 items-center justify-center rounded-full bg-on-accent text-accent transition-transform duration-500 group-hover:rotate-45">
                     <ArrowUpRight className="size-4" />
                   </span>
                 </a>

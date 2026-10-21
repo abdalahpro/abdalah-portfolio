@@ -11,8 +11,10 @@ export interface Reel {
 
 const COUNT = 27;
 
+/** Ordre inversé par rapport au portfolio d'Erfero : la vidéo 27 passe en
+ * premier, la 01 en dernier. */
 export const reels: Reel[] = Array.from({ length: COUNT }, (_, i) => {
-  const n = String(i + 1).padStart(2, "0");
+  const n = String(COUNT - i).padStart(2, "0");
   return {
     id: `reel-${n}`,
     src: `/reels/full/reel-${n}.mp4`,

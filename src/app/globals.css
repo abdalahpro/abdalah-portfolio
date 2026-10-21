@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #09090b;
-  --color-bg-2: #101013;
-  --color-bg-3: #17171b;
-  --color-ink: #f3f0ea;
-  --color-ink-2: #c9c5be;
-  --color-muted: #8d8982;
-  --color-line: rgb(243 240 234 / 0.1);
-  --color-line-strong: rgb(243 240 234 / 0.2);
-  --color-accent: #ff4d1c;
-  --color-accent-2: #ffb38a;
-  --color-paper: #f7f4ee;
-  --color-paper-ink: #16151a;
+  --color-bg: #0b1310;
+  --color-bg-2: #101b17;
+  --color-bg-3: #16241f;
+  --color-ink: #eee9dd;
+  --color-ink-2: #c5c0b2;
+  --color-muted: #8b958e;
+  --color-line: rgb(238 233 221 / 0.1);
+  --color-line-strong: rgb(238 233 221 / 0.2);
+  --color-accent: #c9a96e;
+  --color-on-accent: #0b1310;
+  --color-emerald: #2f8f74;
+  --color-accent-2: #e7d7b1;
+  --color-paper: #f5f1e8;
+  --color-paper-ink: #10201a;
 
   --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
@@ -38,8 +40,8 @@
     100% { transform: translateY(200%); }
   }
   @keyframes pulse-dot {
-    0% { box-shadow: 0 0 0 0 rgb(255 77 28 / 0.6); }
-    100% { box-shadow: 0 0 0 10px rgb(255 77 28 / 0); }
+    0% { box-shadow: 0 0 0 0 rgb(201 169 110 / 0.6); }
+    100% { box-shadow: 0 0 0 10px rgb(201 169 110 / 0); }
   }
 }
 
@@ -60,7 +62,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: #0a0a0a;
+  color: #0b1310;
 }
 
 :focus-visible {
@@ -145,7 +147,7 @@ html.js.intro-seen .preloader {
 
 @utility text-outline {
   color: transparent;
-  -webkit-text-stroke: 1px rgb(243 240 234 / 0.35);
+  -webkit-text-stroke: 1px rgb(238 233 221 / 0.35);
 }
 
 @utility mask-fade-x {

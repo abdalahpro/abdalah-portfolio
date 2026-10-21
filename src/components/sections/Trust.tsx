@@ -44,7 +44,7 @@ export function Trust() {
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   style={{
                     background:
-                      "radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), rgba(255,77,28,0.18), transparent 60%)",
+                      "radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), rgba(201,169,110,0.16), transparent 60%)",
                   }}
                 />
                 <span className="relative flex size-12 items-center justify-center rounded-2xl border border-line bg-bg-3 text-accent">

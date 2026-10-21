@@ -18,8 +18,16 @@ export interface ProjectView {
   ringImage: string;
 }
 
+/** Seuil de qualité visuelle des captures mises en avant sur l'accueil. */
+const HIGHLIGHT_MIN_RATING = 7.5;
+
+/**
+ * Ordre d'affichage inversé (permutation) par rapport au portfolio d'Erfero,
+ * qui classe de la meilleure note à la moins bonne : ici les boutiques qu'il
+ * montre en dernier passent en premier.
+ */
 export function getProjects(locale: Locale): ProjectView[] {
-  return [...projects].sort((a, b) => b.rating - a.rating).map((p) => ({
+  return [...projects].sort((a, b) => b.rating - a.rating).reverse().map((p) => ({
     id: p.id,
     url: p.url,
     host: new URL(p.url).host.replace(/^www\./, ""),
@@ -33,6 +41,13 @@ export function getProjects(locale: Locale): ProjectView[] {
     image: `/work/${p.id}.webp`,
     ringImage: `/work/ring/${p.id}.webp`,
   }));
+}
+
+/** Boutiques mises en avant sur l'accueil : même ordre inversé, limité aux
+ * captures les plus abouties pour ne pas ouvrir sur une boutique plus faible. */
+export function getHighlights(list: ProjectView[]) {
+  const ratings = new Map(projects.map((p) => [p.id, p.rating]));
+  return list.filter((p) => (ratings.get(p.id) ?? 0) >= HIGHLIGHT_MIN_RATING);
 }
 
 export function getNicheCounts() {

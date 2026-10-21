@@ -20,7 +20,7 @@ export default function GlobalNotFound() {
           Cette page n&apos;existe pas ou a été déplacée. — This page doesn&apos;t exist or has moved.
         </p>
         <div className="mt-10 flex gap-3">
-          <Link href="/" className="rounded-full bg-accent px-6 py-3 font-medium text-[#120703]">
+          <Link href="/" className="rounded-full bg-accent px-6 py-3 font-medium text-on-accent">
             Accueil
           </Link>
           <Link href="/en" className="rounded-full border border-line-strong px-6 py-3">

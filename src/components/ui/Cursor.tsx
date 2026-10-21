@@ -55,8 +55,8 @@ export function Cursor() {
       setLabel(next);
       gsap.to(ring.current, {
         scale: next ? 2.6 : interactive ? 1.7 : 1,
-        backgroundColor: next ? "rgba(255,77,28,1)" : "rgba(255,77,28,0)",
-        borderColor: next ? "rgba(255,77,28,1)" : interactive ? "rgba(243,240,234,0.9)" : "rgba(243,240,234,0.45)",
+        backgroundColor: next ? "rgba(201,169,110,1)" : "rgba(201,169,110,0)",
+        borderColor: next ? "rgba(201,169,110,1)" : interactive ? "rgba(238,233,221,0.9)" : "rgba(238,233,221,0.45)",
         duration: 0.45,
         ease: "expo.out",
       });
@@ -93,7 +93,7 @@ export function Cursor() {
         className="invisible absolute left-0 top-0 -ml-5 -mt-5 flex size-10 items-center justify-center rounded-full border border-ink/45 opacity-0"
       >
         <span
-          className="font-mono text-[4.5px] font-medium uppercase tracking-[0.12em] text-[#0a0a0a] transition-opacity duration-300"
+          className="font-mono text-[4.5px] font-medium uppercase tracking-[0.12em] text-on-accent transition-opacity duration-300"
           style={{ opacity: label ? 1 : 0 }}
         >
           {label}

@@ -52,7 +52,7 @@ export function StoresRing({ images }: { images: string[] }) {
     <section ref={root} className="relative h-[220vh]" aria-label={`${site.metrics.storesLaunched}+ ${dict.ring.line1}`}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <RingScene urls={images} drive={drive} />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(9,9,11,0.85)_80%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(11,19,16,0.85)_80%)]" />
 
         <div className="pointer-events-none relative z-10 flex h-full flex-col items-center justify-center text-center mix-blend-difference">
           <p data-ring-copy className="eyebrow mb-4 !text-ink">
