@@ -11,7 +11,7 @@ export const site = {
     fr: "Développeur Shopify & Web FullStack",
     en: "Shopify & Full-Stack Web Developer",
   },
-  url: "https://abdalah-portfolio.vercel.app",
+  url: "https://abdalah-adoi.vercel.app",
   /** Année affichée dans le pied de page (le site est pré-rendu, donc figé). */
   copyrightYear: 2026,
   email: "abdalahprox@gmail.com",

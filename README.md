@@ -58,8 +58,8 @@ Page `/cv` (et `/en/cv`) au format A4 : bouton **Imprimer / Enregistrer en PDF**
 
 ## Mise en ligne sur Vercel
 
-1. [vercel.com](https://vercel.com) → **Add New Project** → importer ce dépôt GitHub.
-2. Garder les réglages par défaut (Next.js est détecté) et déployer.
-3. Si l'URL finale diffère de `abdalah-portfolio.vercel.app`, mettre à jour `url` dans `src/data/site.ts` (SEO, sitemap, image de partage).
+Le site est en production sur **[abdalah-adoi.vercel.app](https://abdalah-adoi.vercel.app)**, via le projet Vercel `abdalah-portfolio` (équipe *Abdalah*), relié à ce dépôt GitHub.
 
-Chaque `git push` redéploie automatiquement le site.
+Chaque `git push` sur `main` redéploie automatiquement la production. Les autres branches obtiennent une URL d'aperçu.
+
+Si le domaine change (nom de domaine personnalisé par exemple), mettre à jour `url` dans `src/data/site.ts` : SEO, sitemap et image de partage en dépendent.
