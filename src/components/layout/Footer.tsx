@@ -77,11 +77,13 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-x">
+      {/* Taille en cqw (largeur du conteneur, pas de l'écran) : le prénom
+          tient toujours en entier, même sur les très grands écrans. */}
+      <div className="container-x [container-type:inline-size]">
         <p
           data-wordmark
           aria-hidden
-          className="flex select-none overflow-hidden pb-[1vw] text-[26.5vw] font-semibold leading-[0.8] tracking-[-0.075em] text-ink"
+          className="flex select-none overflow-hidden pb-[1cqw] text-[30cqw] font-semibold leading-[0.8] tracking-[-0.075em] text-ink"
         >
           {site.firstName.split("").map((c, i) => (
             <span key={i} className="inline-block">

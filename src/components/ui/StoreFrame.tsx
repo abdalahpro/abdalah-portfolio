@@ -32,7 +32,7 @@ export function StoreFrame({
       <div className="relative aspect-[4/5] overflow-hidden [container-type:size]">
         <Image
           src={project.image}
-          alt={project.name}
+          alt={project.alt}
           width={1350}
           height={2100}
           sizes={sizes}

@@ -161,6 +161,38 @@ html.js.intro-seen .preloader {
   margin-bottom: -0.08em;
 }
 
+/* ---------- Mini-démos de la section Services ---------- */
+
+@keyframes demo-pop {
+  0%, 8% { transform: scale(0.3); opacity: 0; }
+  16% { transform: scale(1.15); opacity: 1; }
+  22%, 88% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+@keyframes demo-grow-x {
+  0%, 8% { transform: scaleX(0); }
+  40%, 90% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+@keyframes demo-grow-y {
+  0%, 5% { transform: scaleY(0.08); }
+  40%, 88% { transform: scaleY(1); }
+  100% { transform: scaleY(0.08); }
+}
+@keyframes demo-toast {
+  0%, 50% { transform: translateY(-12px); opacity: 0; }
+  58%, 90% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-12px); opacity: 0; }
+}
+@keyframes demo-load {
+  0% { transform: scaleX(0); }
+  40%, 100% { transform: scaleX(1); }
+}
+@keyframes demo-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
 /* ---------- Grain ---------- */
 
 .grain {

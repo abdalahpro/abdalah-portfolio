@@ -18,14 +18,13 @@ import { VelocityMarquee } from "@/components/sections/VelocityMarquee";
 import { Work } from "@/components/sections/Work";
 import type { Locale } from "@/i18n/types";
 import { getHighlights, getNicheCounts, getProjects } from "@/lib/projects";
-import { personJsonLd } from "@/lib/seo";
+import { homeJsonLd, JsonLd } from "@/lib/seo";
 
 export function HomePage({ locale }: { locale: Locale }) {
   const projects = getProjects(locale);
   const highlights = getHighlights(projects);
   const featured = highlights.slice(0, 10);
   const ringImages = highlights.slice(0, 16).map((p) => p.ringImage);
-  const serviceImages = highlights.slice(10, 18).map((p) => p.image);
   const niches = getNicheCounts().map(([niche, count]) => ({
     niche,
     count,
@@ -34,10 +33,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(locale)) }}
-      />
+      <JsonLd data={homeJsonLd(locale)} />
       <Preloader />
       <Nav />
       <main id="main">
@@ -46,7 +42,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <PainPoints />
         <Work projects={featured} total={projects.length} />
         <StoresRing images={ringImages} />
-        <Services images={serviceImages} />
+        <Services />
         <Metrics />
         <Process />
         <Reels />

@@ -7,6 +7,7 @@ const paths = ["/", "/realisations", "/cv"];
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => ({
     url: `${site.url}${localePath("fr", path)}`,
+    lastModified: site.lastUpdated,
     changeFrequency: "monthly",
     priority: path === "/" ? 1 : 0.7,
     alternates: {

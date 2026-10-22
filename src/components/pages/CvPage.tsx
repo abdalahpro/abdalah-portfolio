@@ -6,6 +6,7 @@ import { cvName, phoneHref, site, whatsappUrl } from "@/data/site";
 import { getDictionary } from "@/i18n";
 import { localePath, switchLocalePath, type Locale } from "@/i18n/types";
 import { getHighlights, getProjects } from "@/lib/projects";
+import { cvJsonLd, JsonLd } from "@/lib/seo";
 import { splitBold } from "@/lib/utils";
 
 function Heading({ children }: { children: React.ReactNode }) {
@@ -39,6 +40,7 @@ export function CvPage({ locale }: { locale: Locale }) {
 
   return (
     <main id="main" className="min-h-screen bg-bg-2 py-6 sm:py-12">
+      <JsonLd data={cvJsonLd(locale)} />
       <div className="no-print container-x mb-6 flex max-w-[210mm] flex-wrap items-center justify-between gap-3 !px-0 sm:mb-8">
         <Link
           href={localePath(locale, "/")}

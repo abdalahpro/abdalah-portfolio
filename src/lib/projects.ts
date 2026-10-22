@@ -16,6 +16,8 @@ export interface ProjectView {
   tags: string[];
   image: string;
   ringImage: string;
+  /** Texte alternatif descriptif (accessibilité + Google Images). */
+  alt: string;
 }
 
 /** Seuil de qualité visuelle des captures mises en avant sur l'accueil. */
@@ -40,6 +42,10 @@ export function getProjects(locale: Locale): ProjectView[] {
     tags: p.tags[locale],
     image: `/work/${p.id}.webp`,
     ringImage: `/work/ring/${p.id}.webp`,
+    alt:
+      locale === "fr"
+        ? `Boutique Shopify ${p.name} : ${p.tagline.fr}`
+        : `${p.name} Shopify store: ${p.tagline.en}`,
   }));
 }
 

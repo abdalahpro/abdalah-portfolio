@@ -39,7 +39,15 @@ export function PainPoints() {
             scale: 0.92,
             filter: "brightness(0.35)",
             ease: "none",
-            scrollTrigger: { trigger: next, start: "top bottom", end: "top 20%", scrub: true },
+            // La carte reste nette tant que la suivante est dans le bas de
+            // l'écran ; elle ne s'assombrit qu'au moment d'être recouverte.
+            scrollTrigger: {
+              trigger: next,
+              start: "top 62%",
+              end: () => `top ${parseFloat(getComputedStyle(next).top) + 8}px`,
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
           });
         });
         return () => split.revert();
@@ -69,8 +77,8 @@ export function PainPoints() {
           <article
             key={item.title}
             data-pain-card
-            className="sticky mb-6 last:mb-0"
-            style={{ top: `calc(12vh + ${i * 22}px)` }}
+            className="sticky mb-[22vh] last:mb-0"
+            style={{ top: `calc(max(5.5rem, 50vh - 15rem) + ${i * 18}px)` }}
           >
             <div
               data-pain-inner

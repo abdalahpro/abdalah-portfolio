@@ -14,6 +14,8 @@ export const site = {
   url: "https://abdalah-adoi.vercel.app",
   /** Année affichée dans le pied de page (le site est pré-rendu, donc figé). */
   copyrightYear: 2026,
+  /** Date de dernière mise à jour du contenu (sitemap). */
+  lastUpdated: "2026-10-22",
   email: "abdalahprox@gmail.com",
   // Numéros au format international, sans espaces ni "+".
   whatsappNumber: "22969272595",

@@ -6,6 +6,7 @@ import { SplitReveal } from "@/components/ui/SplitReveal";
 import { getDictionary } from "@/i18n";
 import type { Locale } from "@/i18n/types";
 import { getNicheCounts, getProjects } from "@/lib/projects";
+import { JsonLd, workJsonLd } from "@/lib/seo";
 
 export function WorkPage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -14,6 +15,7 @@ export function WorkPage({ locale }: { locale: Locale }) {
 
   return (
     <>
+      <JsonLd data={workJsonLd(locale, projects)} />
       <Nav />
       <main id="main">
         <header className="container-x pb-16 pt-36 sm:pb-24 sm:pt-48">
